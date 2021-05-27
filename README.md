@@ -45,6 +45,8 @@ See the source files [here](sources/)
 
 ![Image](img/screenshot2.png)
 
+![Image](img/screenshot3.png)
+
 
 PART 1/2 Distro Installation Workflow
 -------------------------------------

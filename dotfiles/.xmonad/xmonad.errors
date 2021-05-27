@@ -1,7 +1,7 @@
 
-xmonad.hs:432:1: warning: [-Wtabs]
-    Tab character found here, and in 16 further locations.
+xmonad.hs:572:1: warning: [-Wtabs]
+    Tab character found here, and in four further locations.
     Please use spaces instead.
     |
-432 |                   , decoHeight          = myTabsDecoHeight
+572 |         -- Launching three instances of xmobar on their monitors.
     | ^^^^^^^^

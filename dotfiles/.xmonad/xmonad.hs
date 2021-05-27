@@ -429,7 +429,7 @@ myTabConfig = def { fontName            = myFontDefault
                   , activeTextColor     = myColorGrey1
                   , inactiveTextColor   = myColorGrey4
                   , urgentTextColor     = myColorGrey1
-		  , decoHeight          = myTabsDecoHeight
+                  , decoHeight          = myTabsDecoHeight
                   }
 
 -- Sets the gap size around the window
@@ -443,32 +443,32 @@ mySpacingForTabbedLayout = spacingRaw False (Border sw2 sw2 sw2 sw2) True (Borde
 -- Defining a bunch of layouts, some of them not using
 
 til     = renamed [Replace "til"] -- Layout Tiled
-	    $ mySpacing
-	    $ magnifierOff
-            $ Tall 1 (3/100) (1/2)
+        $ mySpacing
+        $ magnifierOff
+        $ Tall 1 (3/100) (1/2)
 
 mti    = renamed [Replace "mti"]      -- Layout Mirror Tiled
-            $ mySpacing
-	    $ magnifierOff
-	    $ Mirror
-            $ Tall 1 (3/100) (1/2)
+        $ mySpacing
+        $ magnifierOff
+        $ Mirror
+        $ Tall 1 (3/100) (1/2)
 
 tab    = renamed [Replace "tab"]  -- Layout Tabbed
-            $ mySpacingForTabbedLayout
-            $ tabbed shrinkText myTabConfig
+        $ mySpacingForTabbedLayout
+        $ tabbed shrinkText myTabConfig
 
 full   = renamed [Replace "ful"] -- Layout Full
-	    $ Full
+        $ Full
 
 
 -- The Layout Hook
 myLayoutHook =   avoidStruts
-	       $ mkToggle (NBFULL ?? NOBORDERS ?? EOT)
-               $ myDefaultLayout
+        $ mkToggle (NBFULL ?? NOBORDERS ?? EOT)
+        $ myDefaultLayout
   where
      myDefaultLayout =     til
-		       ||| mti
-		       ||| tab
+                       ||| mti
+                       ||| tab
 
 ------------------------------------------------------------------------
 -- Window rules:
@@ -561,6 +561,8 @@ myStartupHook = do
     spawnOnce "sleep 4;notify-send 'Welcome to RiceRAW on Linux with XMonad!' 'Press SUPER+F1 to the help.'"  -- Welcome Notification
     spawnOnce "paplay /usr/share/sounds/freedesktop/stereo/service-login.oga" -- Login sound
     setWMName "LG3D"
+
+
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
