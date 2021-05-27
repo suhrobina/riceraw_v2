@@ -1,0 +1,1277 @@
+/***********************************************
+   Name: Shades of gray
+   Author: WernerFP
+   License: GPL-3.0+
+   Last change: 2019-10-07
+*************************************************
+Theme customization for Firefox "about:" pages
+Import this file in userContent.css:
+@import url("about.css");
+************************************************/
+
+:root {
+
+	--in-content-border-active-shadow: rgba(200, 200, 200, 0.01) !important;
+	--in-content-border-active: var(--grey-50) !important;
+	--in-content-border-color: #cccccc !important;
+	--in-content-border-focus: var(--grey-50) !important;
+	--in-content-border-highlight: #4AA6D7 !important;
+	--in-content-border-hover: var(--grey-50) !important;
+	--in-content-border-invalid-shadow: var(--red-50-a30); /* default */
+	--in-content-border-invalid: var(--red-50); /* default */
+
+	--in-content-box-background-active: rgba(249, 249, 250, 0.2) !important;
+	--in-content-box-background-hover: rgba(249, 249, 250, 0.15) !important;
+	--in-content-box-background-odd: #434343 !important;
+	--in-content-box-background: #323232 !important;
+
+	--in-content-box-border-color: rgba(249, 249, 250, 0.2) !important;
+	--in-content-box-info-background: #426285 !important;
+
+	--in-content-button-background-active: #696969 !important;
+	--in-content-button-background-hover: #696969 !important;
+	--in-content-button-background: #575757 !important;
+
+	--in-content-category-background: #404040 !important;
+	--in-content-category-background-active: rgba(12, 12, 12, 0.15) !important;
+	--in-content-category-background-hover: rgba(12, 12, 12, 0.1) !important;
+	--in-content-category-background-selected-active: rgba(12, 12, 12, 0.2) !important;
+	--in-content-category-background-selected-hover: rgba(12, 12, 12, 0.15) !important;
+
+	--in-content-category-text: #f5f5f5 !important;
+	--in-content-category-outline-focus: 1px dotted #0a84ff; /* default */
+	--in-content-category-text-selected-active: #4AA6D7 !important;
+	--in-content-category-text-selected: #4AA6D7 !important;
+
+	--in-content-deemphasized-text: #b1b1b1 !important;
+
+	--in-content-item-hover: rgba(128, 128, 128, 0.32) !important;
+	--in-content-item-selected: #787878 !important;
+
+	--in-content-link-color-active: #4AA6D7 !important;
+	--in-content-link-color-hover: #4AA6D7 !important;
+	--in-content-link-color-visited: #4AA6D7 !important;
+	--in-content-link-color: #4AA6D7 !important;
+
+	--in-content-page-background: #404040 !important;
+	--in-content-page-color: #f5f5f5 !important;
+
+	--in-content-primary-button-background-active: #696969 !important;
+	--in-content-primary-button-background-hover: #696969 !important;
+	--in-content-primary-button-background: #575757 !important;
+
+	--in-content-selected-text: #ffffff; /* default */
+
+	--in-content-tab-color: #424242 !important;
+
+	--in-content-table-background: #ebebeb; /* default */
+	--in-content-table-border-color: #cccccc !important;
+	--in-content-table-border-dark-color: #595959 !important;
+	--in-content-table-header-background: #415366 !important;
+
+	--in-content-text-color: #f5f5f5 !important;
+
+	--in-content-dialogtitle-background: rgba(249,249,250,0.05); /* default */
+	--in-content-dialogtitle-border: rgba(0,0,0,0.5); /* default */
+	--in-content-warning-container: #426285 !important;
+
+	--card-padding: 16px; /* default */
+	--card-shadow: var(--shadow-10); /* default */
+	--card-outline-color: var(--grey-60); /* default */
+	--card-shadow-hover: var(--card-shadow), 0 0 0 2px rgba(128, 128, 128, 0.75) !important;
+	--card-shadow-focus: 0 0 0 2px var(--blue-50), 0 0 0 2px var(--blue-50-a30) !important;
+
+	scrollbar-color: rgba(250, 250, 250, 0.4) rgba(20, 20, 20, 0.3) !important;
+
+	/* Clean gray without bluish */
+	--grey-10: #f9f9f9 !important;
+	--grey-20: #ededed !important;
+	--grey-30: #d7d7d7 !important;
+	--grey-40: #b1b1b1 !important;
+	--grey-50: #737373 !important;
+	--grey-60: #4a4a4a !important;
+	--grey-70: #383838 !important;
+	--grey-80: #2a2a2a !important;
+	--grey-90: #0c0c0c !important;
+	--grey-90-a10: rgba(13, 13, 13, 0.1) !important;
+	--grey-90-a20: rgba(13, 13, 13, 0.2) !important;
+	--grey-90-a30: rgba(13, 13, 13, 0.3) !important;
+	--grey-90-a40: rgba(13, 13, 13, 0.4) !important;
+	--grey-90-a50: rgba(13, 13, 13, 0.5) !important;
+	/* 20% lightness */
+	--green-50: #63ff3e !important;
+	--green-60: #45ef33 !important;
+	--green-70: #38be33 !important;
+	--green-80: #339837 !important;
+	--green-90: #336a39 !important;
+	--orange-50: #ffc733 !important;
+	--purple-70: #9533d7 !important;
+	--purple-70-a40: rgba(149, 51, 215, 0.4) !important;
+	--red-50: #ff336c !important;
+	--red-50-a30: rgba(255, 51, 108, 0.3) !important;
+	--red-60: #ff3355 !important;
+	--red-70: #d73342 !important;
+	--red-80: #8d3335 !important;
+	--red-90: #713533 !important;
+	--yellow-50: #ffff33 !important;
+	--yellow-60: #ffe933 !important;
+	--yellow-70: #d7b233 !important;
+	--yellow-80: #a48433 !important;
+	--yellow-90: #715b33 !important;
+
+	--shadow-10: 0 1px 4px var(--grey-90-a10); /* default */
+	--shadow-30: 0 4px 16px var(--grey-90-a10); /* default */
+
+	/* < FF 68 */
+	--in-content-dialogtitle-border: rgba(0, 0, 0, 0.5) !important;
+	--in-content-warning-container: var(--grey-90-a30) !important;
+	/* FF 60 ESR */
+	--aboutSupport-table-background: #313131 !important;
+	--aboutProfiles-table-background: #313131 !important;
+
+	--in-content-deemphasized-text: #b1b1b1 !important;
+}
+
+/*********************************************/
+/************** Common settings **************/
+/*********************************************/
+@-moz-document	url-prefix(about:about),
+				url-prefix(about:addons),
+				url-prefix(about:buildconfig),
+				url-prefix(about:cache),
+				url-prefix(about:certificate),
+				url-prefix(about:checkerboard),
+				url-prefix(about:compat),
+				url-prefix(about:config),
+				url-prefix(about:crashes),
+				url-prefix(about:credits),
+				url-prefix(about:debugging),
+				/*url-prefix(about:devtools),*/
+				url-prefix(about:downloads),
+				/*url-prefix(about:home),*/
+				url-prefix(about:library),
+				/*url-prefix(about:license),*/
+				url-prefix(about:logins),
+				/*url-prefix(about:logo),*/
+				url-prefix(about:memory),
+				/*url-prefix(about:mozilla),*/
+				url-prefix(about:networking),
+				/*url-prefix(about:newtab),*/
+				url-prefix(about:performance),
+				url-prefix(about:plugins),
+				url-prefix(about:policies),
+				url-prefix(about:preferences),
+				url-prefix(about:privatebrowsing),
+				url-prefix(about:profiles),
+				url-prefix(about:protections),
+				url-prefix(about:rights),
+				url-prefix(about:robots),
+				url-prefix(about:serviceworkers),
+				url-prefix(about:studies),
+				url-prefix(about:support),
+				url-prefix(about:sync-log),
+				url-prefix(about:telemetry),
+				url-prefix(about:url-classifier),
+				url-prefix(about:webrtc),
+				/*url-prefix(about:welcome),*/
+				regexp("^chrome://browser/content/.*/.*.xul"),
+				regexp("^chrome://mozapps/.*/.*.xul") {
+
+	#body {
+		/* ID serviceworkers */
+		color: var(--in-content-page-color) !important;
+	}
+	description.indent,
+	.indent > description {
+
+		color: #e5e5e5 !important;
+	}
+	a {
+
+		color: var(--in-content-link-color) !important;
+	}
+	h1 {
+
+		font-size: 2em !important;
+	}
+	button {
+		font-size: 13px !important;
+		border: none !important;
+		background-color: green !important;
+	}
+	#history,
+	.prefpane {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-page-background) !important;
+	}
+
+/************ FF 60 ESR - start **************/
+
+	button:not(:hover) {
+
+		background-color: var(--in-content-button-background) !important;
+	}
+	button:hover {
+
+		background-color: var(--in-content-button-background-hover) !important;
+	}
+	menulist {
+
+		background-color: var(--in-content-button-background) !important;
+	}
+	menulist:hover {
+
+		background-color: var(--in-content-button-background-hover) !important;
+	}
+	textbox:hover {
+
+		border: 1px solid var(--in-content-border-hover) !important;
+	}
+
+/************* FF 60 ESR - end ***************/
+}
+
+/*********************************************/
+/******* about: and xul table headers ********/
+/*********************************************/
+
+@-moz-document	url-prefix(about:),
+				regexp("^chrome://.*.xul") {
+
+	treecol:not([hideheader="true"]), treecolpicker {
+
+		--moz-appearance: treeheadercell !important;
+		color: #dbdbdb !important;
+		background-color: #282828 !important;
+	}
+	treecol:not([hideheader="true"]):hover,
+	treecolpicker:hover {
+
+		--moz-appearance: none !important;
+		color: #ffffff !important;
+		background-color: #232323 !important;
+	}
+}
+
+/*********************************************/
+/**************** about:addons ***************/
+/*********************************************/
+
+@-moz-document url-prefix(about:addons) {
+
+/**** Up to Firefox 68 ESR needed - start ****/
+
+	.detail-row,
+	.detail-row-complex {
+
+		text-shadow: none !important;
+	}
+	#detail-fulldesc {
+
+		line-height: 1.45em !important;
+		margin: 1.75em 0 1.75em 0!important;
+	}
+	#addon-options {
+
+		background-color: white;
+		padding-left: 8px !important;
+	}
+	.card {
+
+		transition: box-shadow 0ms !important;
+	}
+	.alert,
+	.message-bar {
+
+		color: var(--in-content-page-color) !important;
+		background-color: #525252 !important;
+		border: 1px solid #cccccc !important;
+		padding: 10px !important;
+	}
+	.addon.addon-view {
+		background-color: #323232 !important;
+	}
+	.addon-view[pending="disable"],
+	.addon-view[pending="uninstall"] {
+
+		--view-highlight-color: #787878 !important;
+	}
+	.addon-view[notification],
+	.addon-view[pending] {
+
+		background-image: radial-gradient(at 50% 0%, rgba(200, 200, 200, 0.3) 0%, transparent 75%) !important;
+	}
+	.warning,
+	.pending,
+	.error {
+
+		font-weight: 500 !important;
+	}
+	.addon-view .error {
+
+		color: #ed6477 !important;
+	}
+	.privateBrowsing-notice {
+
+		background-color: #6D4389 !important;
+		font-weight: 500 !important;
+	}
+
+	.detail-view-container {
+
+		font-size: 1.1rem !important;
+		color: var(--in-content-page-color) !important;
+	}
+	#header-utils-btn {
+
+		background-color: var(--in-content-button-background) !important;
+		border: none !important;
+	}
+	#header-utils-btn:hover,
+	.header-button:hover,
+	.header-button:active {
+
+		background-color: var(--in-content-button-background-hover) !important;
+	}
+	#detail-screenshot-box {
+
+		display: none !important;
+	}
+	button.button-link,
+	button.button-link:hover {
+
+		color: #f5f5f5 !important;
+		text-decoration: none !important;
+	}
+}
+
+/************* about:addons xul **************/
+
+@-moz-document	regexp("^chrome://.*.xul") {
+	/* Firefox < 68: */
+	.detail-row,
+	.detail-row-complex {
+
+		text-shadow: none !important;
+	}
+
+/***** Up to Firefox 68 ESR needed - end *****/
+}
+
+/*********************************************/
+/******* about:buildconfig about:cache *******/
+/*********************************************/
+
+@-moz-document	url(about:buildconfig),
+				url-prefix(about:cache) {
+
+/**** Up to Firefox 68 ESR needed - start ***/
+
+	body {
+
+		color: var(--in-content-page-color) !important;
+		font-size: 14px !important;
+	}
+	#entries > tbody > tr:nth-child(2n+2) {
+
+    	background-color: #343434 !important;
+	}
+	#entries > tbody > tr:nth-child(2n+1) {
+
+    	background-color: #383838 !important;
+	}
+	#entries > thead > tr > th:first-child,
+	#entries > tbody > tr > td:first-child {
+
+		padding-left: 8px !important;
+	}
+	a {
+
+		text-decoration: none !important;
+	}
+	a:hover {
+
+		text-decoration: underline !important;
+	}
+	#entries > tbody > tr > td > a {
+
+		color: #55aaff !important;
+	}
+
+/***** Up to Firefox 68 ESR needed - end ******/
+}
+
+/*********************************************/
+/************ about:certificate **************/
+/*********************************************/
+
+@-moz-document url-prefix(about:certificate) {
+
+	certificate-tab.selected {
+
+		color: var(--in-content-link-color) !important;
+		border-bottom: 2px solid var(--in-content-link-color) !important;
+	}
+}
+
+/*********************************************/
+/************ about:checkerboard *************/
+/*********************************************/
+
+@-moz-document url-prefix(about:checkerboard) {
+
+	* {
+
+		font-size: 14px !important;
+	}
+	body {
+
+		color: var(--in-content-page-color) !important;
+		background-color: #404040 !important;
+		border-color: #cccccc !important;
+	}
+	table.listing, p, label, #raw {
+
+		font-family: sans-serif !important;
+		font-size: 14px !important;
+	}
+	table {
+
+		background-color: -moz-Dialog !important;
+		color: -moz-DialogText !important;
+		text-align: start !important;
+		width: 100% !important;
+		border: 1px solid #191919 !important;
+		border-collapse: collapse !important;
+	}
+	table th, table td {
+
+		border: 1px solid #191919 !important;
+	}
+	th {
+
+		font-size: 0.98em !important;
+		background-color: Highlight !important;
+		color: HighlightText !important;
+	}
+	td {
+
+		font-size: 0.95em !important;
+		background-color: var(--in-content-box-background) !important;
+	}
+	#canvas,
+	#active {
+
+		border: 1px solid ThreeDShadow !important;
+		margin: 10px 0 10px 0 !important;
+		background-color: #575757 !important;
+		border-radius: 10px !important;
+		}
+	#active {
+
+		border-radius: 5px !important;
+		margin: 0 0 10px 0 !important;
+		padding: 2px 5px !important;
+		white-space: nowrap !important;
+		overflow: hidden !important;
+		text-overflow: ellipsis !important;
+	}
+	#trace {
+
+		margin: 10px 0 10px 0 !important;
+		padding: 5px !important;
+	}
+}
+
+/*********************************************/
+/*************** about:credits ***************/
+/*********************************************/
+
+@-moz-document url(https://www.mozilla.org/credits/) {
+
+	html, body {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-page-background) !important;
+	}
+	a {
+
+		color: var(--in-content-link-color) !important;
+	}
+}
+
+/*********************************************/
+/**************** about:config ***************/
+/*********************************************/
+
+@-moz-document url(about:config) {
+
+	td, th,
+	input#about-config-search {
+
+		font-size: 14px !important;
+	}
+	button {
+
+		min-height: 26px !important;
+	}
+	#show-all:not(.hidden) {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-button-background) !important;
+		opacity: 1 !important;
+	}
+	#show-all:not(.hidden):hover {
+
+		color: #ffffff !important;
+		background-color: var(--in-content-button-background-hover) !important;
+		background-color: transparent !important;
+	}
+	#prefs {
+
+		background-color: #373737 !important;
+		font-size: 1em !important;
+	}
+	#prefs > tr {
+
+		font-size: 0.5em !important;
+	}
+	#prefs > tr:hover {
+
+		background-color: #373737 !important;
+		box-shadow: inset 0 -1px 0 0 rgba(255,255,255,0.35) !important;
+
+	}
+	#prefs > tr.odd:hover {
+
+		background-color: #434343 !important;
+		box-shadow: inset 0 -1px 0 0 rgba(255,255,255,0.35) !important;
+	}
+	#prefs > tr.has-user-value th[scope="row"],
+	#prefs > tr.has-user-value td.cell-value {
+
+		color: #ffe792 !important;
+		font-weight: normal !important;
+	}
+
+/************ XUL-Versions start *************/
+
+	#configTree > treechildren::-moz-tree-row {
+
+		background-color: #373737 !important;
+		border-bottom: 1px solid transparent !important;
+		height: 2.6em !important;
+	}
+	#configTree > treechildren::-moz-tree-row(even) {
+
+		background-color: #434343 !important;
+		border-bottom: 1px solid transparent !important;
+	}
+	#configTree > treechildren::-moz-tree-row(hover) {
+
+		border-bottom: 1px solid rgba(255,255,255,0.35) !important;
+	}
+
+/************* XUL-Versions end **************/
+
+	#warningTitle {
+		/* FF 60 ESR */
+		color: var(--in-content-text-color) !important;
+	}
+}
+
+/*********************************************/
+/*************** about:crashes ***************/
+/*********************************************/
+
+@-moz-document url-prefix(about:crashes) {
+
+	a.button-as-link {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-button-background) !important;
+		border: none !important;
+		font-size: 0.95em !important;
+	}
+	a.button-as-link:hover {
+
+		background-color: var(--in-content-button-background-hover) !important;
+	}
+}
+
+/*********************************************/
+/************** about:debugging **************/
+/*********************************************/
+
+@-moz-document url-prefix(about:debugging) {
+
+	body {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-page-background) !important;
+	}
+	.card {
+
+		background-color: var(--in-content-box-background) !important;
+		border: 1px solid var(--in-content-box-background) !important;
+	}
+	.card:hover {
+
+		border: 1px solid var(--in-content-box-border-color) !important;
+	}
+	.target-card-actions {
+
+		border-top: 1px solid #6d6d6d !important;
+	}
+	.addon-target-info { /* <-- FF < 68 */
+
+		font-size: 0.95em !important;
+	}
+	.addon-target-messages { /* <-- FF < 68 */
+
+		border-bottom: 1px solid #6d6d6d !important;
+	}
+	.addon-target-warning-message { /* <-- FF < 68 */
+
+		color: #715100 !important;
+		background-color: #FFFBD6 !important;
+		font-family: monospace !important;
+		font-size: 14px !important;
+		line-height: 1.6 !important;
+		padding: 12px 20px !important;
+		border-radius: 5px !important;
+		margin-left: 10px !important;
+		margin-right: 10px !important;
+	}
+	#about-debugging-network-locations-host-input {
+		/* entry in Network Location */
+		color: var(--in-content-page-color) !important;
+		background-color: #575757 !important;
+		border: 1px solid  #181818 !important;
+		border-radius: 3px !important;
+	}
+	.fieldpair__description {
+
+		color: var(--in-content-page-color) !important;
+	}
+	.fieldpair,
+	.debug-target-item__additional_actions {
+
+		border-top: 1px solid rgba(128, 128, 128, 0.75) !important;
+	}
+	.debug-target-item__action {
+
+		font-size: 0.89em !important;
+	}
+	.default-button {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-button-background) !important;
+	}
+	.sidebar__footer:hover,
+	.default-button:hover {
+
+		color: #ffffff !important;
+		background-color: var(--in-content-button-background-hover) !important;
+	}
+	.sidebar__footer__support-help {
+
+		color: var(--in-content-page-color) !important;
+	}
+	.debug-target-item__name {
+
+		font-size: 0.95em !important;
+	}
+	.connect-section__header__title {
+
+		font-size: 1.25em !important;
+	}
+	.default-button.connect-page__usb-section__heading__toggle.js-connect-usb-toggle-button {
+		/* Enable USB Devices */
+		font-size: 13px !important;
+	}
+/************* FF < 68 - start ***************/
+	#load-addon-from-file,
+	.debug-button,
+	.update-button,
+	.addon-target-info,
+	.addons-web-ext-tip {
+
+		font-size: 0.9em !important;
+	}
+	.service-worker-multi-process {
+
+		border: 1px solid #45A1FF !important;
+		border-radius: 3px !important;
+		background-color: #415366 !important;
+		margin: 10px !important;
+		font-size: 0.99em !important;
+	}
+	.target-status-stopped {
+
+	background-color: transparent !important;
+	}
+	.debug-button.addon-target-button, /* <-- FF 60 ESR */
+	.target-card-action-link.debug-button.addon-target-button {
+
+		color: #f5f5f5 !important;
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+		text-decoration: none !important;
+		font-size: 13px !important;
+	}
+/************** FF < 68 - end ****************/
+
+/************ FF 60 ESR - start **************/
+	.addon-target-container {
+
+	background-color: #323232 !important
+	}
+	.addon-target-container:hover {
+
+		box-shadow: var(--card-shadow-hover) !important;
+	}
+	.addon-target-actions {
+
+		border-top: 1px solid rgba(200, 200, 200, 0.2) !important;
+	}
+/************* FF 60 ESR - end ***************/
+}
+
+/*********************************************/
+/************** about:downloads **************/
+/*********************************************/
+
+@-moz-document url-prefix(about:downloads) {
+
+	#downloadsRichListBox > richlistitem {
+
+		background-color: #373737 !important;
+		border-bottom: 1px solid #787878 !important;
+	}
+	#downloadsRichListBox > richlistitem:nth-child(2n+2) {
+
+		background-color: #414141 !important;
+	}
+	#downloadsRichListBox > richlistitem:hover {
+
+		box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.35) !important;
+	}
+	#downloadsRichListBox > richlistitem[selected="true"],
+	#downloadsRichListBox > richlistitem:nth-child(2n+2)[selected="true"] {
+
+		background-color: var(--in-content-button-background) !important;
+	}
+}
+
+/*********************************************/
+/**************** about:logins ***************/
+/*********************************************/
+
+@-moz-document url-prefix(about:logins) {
+	/* FF 70+ menu normalization */
+	.menu {
+
+		box-shadow: var(--shadow-30) !important;
+	}
+	.menu,
+	.menu > button {
+
+		background-color: #323232 !important;
+	}
+	.menu > button:hover {
+
+		background-color: rgba(140, 140, 140, 0.6) !important;
+	}
+	.menuitem-separator {
+
+		border-top-width: 1px !important;
+		opacity: 30% !important;
+	}
+}
+
+/*********************************************/
+/**************** about:memory ***************/
+/*********************************************/
+
+@-moz-document url-prefix(about:memory) {
+
+/************ FF 60 ESR - start **************/
+	html {
+
+		color: -moz-DialogText;
+	}
+	h2 {
+
+		background: transparent !important;
+	}
+	.mrValue,
+	.mrName {
+
+		color: var(--in-content-page-color) !important;
+	}
+/************* FF 60 ESR - end ***************/
+}
+
+/*********************************************/
+/************* about:performance *************/
+/*********************************************/
+@-moz-document url(about:performance) {
+
+	body {
+
+		font-size: 1.1em !important;
+	}
+	#dispatch-table {
+
+		background-color: var(--in-content-page-background) !important;
+	}
+	#dispatch-tbody > tr {
+
+		border-bottom: 1px solid #606060 !important;
+	}
+	#dispatch-tbody > tr:nth-child(1n+1) {
+
+		background-color: #414141 !important;
+	}
+	#dispatch-tbody > tr:nth-child(2n+2) {
+
+		background-color: #393939 !important;
+	}
+	#dispatch-thead > tr > td {
+
+		color: #dbdbdb !important;
+		background-color: #303030 !important;
+	}
+	#dispatch-thead > tr > td:hover  {
+
+		color: #ffffff !important;
+		background-color: #262626 !important;
+	}
+	.content-style, .schema, schema:hover {
+
+		color: var(--in-content-link-color) !important;
+		background-color: var(--in-content-box-background) !important;
+	}
+	#errorsContent,
+	#activeContent,
+	#documentation > table > tbody  {
+
+		font-size: 0.9em !important;
+		background-color: #535353 !important;
+		border: 1.1px solid var(--in-content-border-color) !important;
+	}
+	tbody tr:hover,
+	tbody.collapsible > tr:hover  {
+
+		background-color: transparent !important;
+		box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.35) !important;
+	}
+	.last_row:not(:last-child) td {
+
+		border-bottom: none !important;
+	}
+	#subprocess-reports td { /* <-- FF 60 ESR */
+
+		background-color: transparent !important;
+	}
+	li.delta[impact="2"] { /* <-- FF 60 ESR */
+
+		border-left-color: #84c184 !important;
+	}
+}
+
+/*********************************************/
+/************** about:plugins ****************/
+/*********************************************/
+
+@-moz-document url-prefix(about:plugins) {
+
+	html, body {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-page-background) !important;
+	}
+	.notice {
+
+		background-color: #313131 !important;
+		border: none !important;
+	}
+	table {
+
+		border: 1px solid #232323 !important;
+	}
+	th {
+
+		background-color: #787878 !important;
+	}
+}
+
+/*********************************************/
+/************** about:policies ***************/
+/*********************************************/
+
+@-moz-document url-prefix(about:policies) {
+
+	.content-style, .schema, schema:hover {
+
+		color: var(--in-content-link-color) !important;
+		background-color: var(--in-content-box-background) !important;
+	}
+	#errorsContent,
+	#activeContent,
+	#documentationContent {
+
+		font-size: 0.94em !important;
+		background-color: #434343 !important;
+		border: 1px solid #cccccc !important;
+	}
+	tbody > tr:hover {
+
+		background-color: transparent !important;
+		box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, 0.35) !important;
+	}
+	.active-policies tr.odd,
+	.errors tr:nth-child(2n+1),
+	tbody:nth-child(4n+1) {
+
+		background-color: #535353 !important;
+	}
+	.last_row:not(:last-child) td {
+
+		border-bottom: none !important;
+	}
+}
+
+/*********************************************/
+/************ about:preferences **************/
+/*********************************************/
+
+@-moz-document url-prefix(about:preferences) {
+
+	h1 {
+
+		font-size: 1.75em !important;
+	}
+	.sticky-container {
+
+		font-size: 95% !important;
+	}
+	.dialogBox, .dialogFrame {
+
+		background-image: none !important;
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-page-background) !important;
+	}
+	.dialogBox > .groupbox-title, /* <-- this selector FF 60 ESR */
+	.dialogTitleBar {
+
+		color: var(--in-content-page-color) !important;
+		background-color: #4a4a4a !important;
+		border-bottom: 1px solid var(--in-content-dialogtitle-border) !important;
+	}
+	.info-panel, .extension-controlled {
+
+		background: var(--in-content-warning-container) !important;
+	}
+	.search-tooltip {
+
+		color: black !important;
+	}
+}
+/******* about:preferences xul - start *******/
+/*********** FF 60 ESR, FF 68 ESR ************/
+
+@-moz-document	regexp("^chrome://.*.xul") {
+
+	#SanitizeDialogPane,
+	#BlocklistsDialog,
+	#ContainersDialog,
+	#LanguagesDialog,
+	#FontsDialog,
+	#ColorsDialog,
+	#ConnectionsDialog,
+	#PermissionsDialog,
+	#ClearSiteDataDialog,
+	#SiteDataSettingsDialog,
+	#SignonViewerDialog,
+	#changemp,
+	#SanitizeDialog,
+	#SitePermissionsDialog,
+	#certmanager,
+	#devicemanager,
+	#syncDisconnectDialog {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-page-background) !important;
+	}
+	#sanitizeEverythingWarningBox {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-box-background) !important;
+		border: 1px solid #595959 !important;
+	}
+	#certMgrTabbox {
+
+		border-top: 1px solid #595959 !important;
+		border-bottom: 1px solid #595959 !important;
+		color: var(--in-content-page-color) !important;
+	}
+	#certMgrTabbox > tab {
+
+		border-bottom: 2px solid transparent !important;
+	}
+	#certMgrTabbox > tab[selected] {
+
+		background-color: var(--in-content-button-background-active) !important;
+		border-bottom: 2px solid #2b95ff !important;
+	}
+	#certMgrTabbox > tab:not([selected]):hover,
+	tab[visuallyselected="true"] {
+
+		background-color: var(--in-content-button-background) !important;
+	}
+	#engineList {
+
+		border: 1px solid #595959 !important;
+	}
+	#browserNewTabExtensionContent {
+
+		background-color: #303030 !important;
+	}
+	radiogroup#icon > radio {
+		/* Icons Container Tabs */
+		background-color: #dedede !important;
+	}
+}
+/******** about:preferences xul - end ********/
+
+/*********************************************/
+/********** about:privatebrowsing ************/
+/*********************************************/
+
+@-moz-document url-prefix(about:privatebrowsing) {
+
+	.fake-textbox {
+
+		color: inherit !important;
+	}
+	.info > h1 {
+
+		font-size: 20px !important;
+	}
+	.info p {
+
+		font-size: 14px !important;
+	}
+}
+
+/*********************************************/
+/************* about:protections *************/
+/*********************************************/
+
+@-moz-document url-prefix(about:protections) {
+
+/* FF 69+ - advertising buttons more unobtrusive */
+	.card-header > button,
+	#get-proxy-extension-link,
+	#open-about-logins-button,
+	#sign-up-for-monitor-link {
+
+		color: var(--grey-20) !important;
+		background-color: var(--in-content-button-background) !important;
+		box-shadow: none !important;
+		font-size: 0.85em !important;
+	}
+	.card-header > button:hover,
+	#get-proxy-extension-link:hover,
+	#open-about-logins-button:hover,
+	#sign-up-for-monitor-link:hover {
+
+		color: #ffffff !important;
+		background-color: var(--in-content-button-background-hover) !important;
+		box-shadow: none !important;
+	}
+	#sign-up-for-monitor-link:focus,
+	#get-proxy-extension-link:focus {
+
+		box-shadow: none !important;
+	}
+}
+
+/*********************************************/
+/** about:profiles, support, url-classifier **/
+/*********************************************/
+
+@-moz-document	url(about:profiles),
+				url(about:support),
+				url(about:url-classifier) {
+
+	.notice-box,
+	table > tbody,
+	table > tr > td {
+
+		background-color: #313131 !important;
+	}
+	.opendir {
+
+		margin-inline-start: 10px !important;
+	}
+	button {
+
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+	}
+	table {
+
+		font-size: 13px !important;
+	}
+}
+
+/*********************************************/
+/*********** about:serviceworkers ************/
+/*********************************************/
+
+@-moz-document url-prefix(about:serviceworkers) {
+
+	html, body {
+
+		color: var(--in-content-page-color) !important;
+		background-color: var(--in-content-page-background) !important;
+	}
+	/* Firefox issue: button IDs can't be modified, instructions don't work */
+	#update-button,
+	#unregister-button {
+
+		background-color: var(--in-content-button-background) !important;
+		padding-right: 10px !important;
+	}
+	#update-button:hover,
+	#unregister-button:hover,
+	#update-button:active,
+	#unregister-button:active {
+
+		background-color: var(--in-content-button-background-hover) !important;
+	}
+}
+
+/*********************************************/
+/*************** about:studies ***************/
+/*********************************************/
+
+@-moz-document url-prefix(about:studies) {
+
+	.info-box-content {
+
+		background-color: rgba(69, 161, 255, 0.2) !important;
+		border: 1px solid #45A1FF !important;
+		border-radius: 3px !important;
+	}
+		.study-description code {
+
+		background-color: transparent !important;
+	}
+}
+
+/*********************************************/
+/************** about:sync-log ***************/
+/*********************************************/
+
+@-moz-document url(about:sync-log) {
+
+	body {
+
+		background-color: #313131 !important;
+	}
+	h1 {
+		font-size: 1.8em !important;
+	}
+	tbody, p {
+
+	font-size: 14px !important;
+	}
+}
+
+/*********************************************/
+/************* about:telemetry ***************/
+/*********************************************/
+
+@-moz-document url-prefix(about:telemetry) {
+
+	#home-section {
+
+		font-size: 15px !important;
+	}
+	#search,
+	#category-raw,
+	#activeAddons > tr > th,
+	#activePlugins > tr > th,
+	#activeGMPlugins > tr > th,
+	#activeExperiment > tr > th {
+
+		font-size: 14px !important;
+	}
+	/* Firefox issue: menus in aboutTelemetry.css are not declared */
+	#stores {
+
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+	#stores > option,
+	#choose-ping-type > option,
+	#choose-ping-id > optgroup > option {
+
+		background-color: #323232 !important;
+		box-shadow: none !important;
+	}
+	/* Repositioning drop down title,
+	because otherwise the dropdown icon overlays longer text strings */
+	#categories {
+
+		width: 300px !important;
+	}
+	#ping-type {
+
+		text-align: left !important;
+		padding-left: 34px !important;
+	}
+	.dropdown {
+
+		background-position: left 4px center !important;
+	}
+}
+
+/*********************************************/
+/*********** about:url-classifier ************/
+/*********************************************/
+
+@-moz-document url(about:url-classifier) {
+
+	/* Firefox issue: menus in info-pages.css are not declared */
+	#search-listtype > option {
+
+		background-color: #323232 !important;
+		box-shadow: none !important;
+	}
+}
+
+/*********************************************/
+/*************** about:webrtc ****************/
+/*********************************************/
+
+@-moz-document url(about:webrtc) {
+
+	html {
+
+		background-color: var(--in-content-page-background) !important;
+	}
+	#content > div {
+
+		background-color: var(--in-content-box-background) !important;
+	}
+	button {
+
+		height: 2.6em !important;
+	}
+}

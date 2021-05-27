@@ -1,0 +1,35 @@
+#    _                   _
+#   (_)_ __  _ __  _   _| |_ _ __ ___
+#   | | '_ \| '_ \| | | | __| '__/ __|
+#  _| | | | | |_) | |_| | |_| | | (__
+# (_)_|_| |_| .__/ \__,_|\__|_|  \___|
+#           |_|
+#
+# Individual readline initialization file
+
+# Configure display the current mode of vi command-line editing
+set show-mode-in-prompt on
+
+# Cursor style: blink underline
+set vi-cmd-mode-string "\1\e[4 q\2"
+
+# Cursor style: blink block
+set vi-ins-mode-string "\1\e[2 q\2"
+
+# Reduce tab completion key presses and show suggestions
+set show-all-if-ambiguous on
+
+# Color files by types
+set colored-stats On
+
+# Append char to indicate type
+set visible-stats On
+
+# Mark symlinked directories
+set mark-symlinked-directories On
+
+# Color the common prefix
+set colored-completion-prefix On
+
+# Color the common prefix in menu-complete
+set menu-complete-display-prefix On

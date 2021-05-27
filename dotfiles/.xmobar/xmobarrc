@@ -1,0 +1,160 @@
+-- =============================================================================
+--   __   _____  ___      _               ______  _____
+--   \ \ / /|  \/  |     | |              | ___ \/  __ \
+--    \ V / | .  . | ___ | |__   __ _ _ __| |_/ /| /  \/
+--    /   \ | |\/| |/ _ \| '_ \ / _` | '__|    / | |
+--   / /^\ \| |  | | (_) | |_) | (_| | |  | |\ \ | \__/\
+--   \/   \/\_|  |_/\___/|_.__/ \__,_|_|  \_| \_| \____/
+--
+-- =============================================================================
+--          FILE: xmobarrc
+--
+--         USAGE: Edit home path before using
+--                Default folder is `~/.xmobar/`
+--                File should be executable
+--
+--   DESCRIPTION: This is configuration file for xmobar
+--                Created on xmobar version >= 0.36
+--
+--  REQUIREMENTS: Packages: alsa-core alsa-mixer htop wavemon  lm-sensors
+--                Icons in `~/.xmobar/icons/` folder
+--
+--     COPYRIGHT: Copyright (c) 2021
+--       LICENSE: GNU General Public License
+--       CREATED: 21 May 2021
+--      REVISION: 22 May 2021
+-- =============================================================================
+
+-- Icon pattern filename ralation to values (min=0, max=100):
+-- file_0 [ 0]
+-- file_1 [12]
+-- file_2 [24]
+-- file_3 [36]
+-- file_4 [48]
+-- file_5 [60]
+-- file_6 [72]
+-- file_7 [84]
+-- file_8 [96]
+
+Config { font = "xft:Iosevka:weight=regular:pixelsize=16:antialias=true:hinting=true"
+       , additionalFonts = [ "xft:Iosevka:weight=bold:pixelsize=16:antialias=true:hinting=true"]
+       , borderColor = "black"
+       , border = NoBorder
+       , bgColor = "#282c34" -- Shade of Black Russian Color
+       , fgColor = "grey"
+       , alpha = 255
+       , position = Static { xpos = 0 , ypos = 0, width = 1920, height = 25 }
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "/home/meow/.xmobar/icons/" -- Default was "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [ Run UnsafeStdinReader
+
+                    -- , Run Com "uname" ["-s","-r"] "" 36000
+
+                    , Run Network "ppp0" [ "-t", "<fc=limegreen><up>VPN</fc>" ] 10
+
+                    , Run Network "kvnet" [ "-t", "<fc=limegreen><up>KVC</fc>" ] 10
+
+                    , Run DynNetwork [ "-t", "<dev>: <rxipat><rx>Kb | <txipat><tx>Kb"
+                                     , "-L", "0", "-H", "1000000"
+                                     , "--normal", "limegreen", "--high", "tomato"
+                                     , "-w", "5"
+                                     , "--"
+                                     , "--rx-icon-pattern", "<icon=network/rx/network_rx_%%.xpm/>"
+                                     , "--tx-icon-pattern", "<icon=network/tx/network_tx_%%.xpm/>"
+                                     , "--devices", "wlp3s0,enp0s25"
+                                     ] 10
+
+                    , Run DiskIO [ ("sda", "<readbipat><writeipat>") ]
+                                 [ "--"
+                                 , "--read-icon-pattern", "<icon=disk/read/read_%%.xpm/>"
+                                 , "--write-icon-pattern", "<icon=disk/write/write_%%.xpm/>"
+                                 ] 10
+
+                    , Run Cpu [ "-t", "<ipat> <total>%"
+                              , "-L", "11", "-H", "83"
+                              , "-n", "limegreen", "-h", "tomato"
+                              , "-w", "3"
+                              , "--"
+                              , "--load-icon-pattern", "<icon=cpu/cpu_%%.xpm/>"
+                              ] 10
+
+                    , Run MultiCoreTemp [ "-t", "<avgipat> <avg>°C"
+                                        , "-L", "67", "-H", "77"
+                                        , "-l", "limegreen", "-n", "gold", "-h", "tomato"
+                                        , "-w", "3"
+                                        , "--"
+                                        , "--mintemp", "20"
+                                        , "--maxtemp", "100"
+                                        ,"--avg-icon-pattern", "<icon=temperature/temperature_%%.xpm/>"
+                                        ] 10
+
+                    , Run Memory [ "-t", "<usedipat> <usedratio>%"
+                                 , "-L", "59", "-H", "83"
+                                 , "-n", "gold", "-h", "tomato"
+                                 , "-w", "3"
+                                 , "--"
+                                 , "--used-icon-pattern", "<icon=ram/ram_%%.xpm/>"
+                                 ] 10
+
+                    , Run Swap [ "-t", "Sw: <usedratio>%"
+                               , "-L", "59", "-H", "83"
+                               , "-n", "gold", "-h", "tomato"
+                               , "-w", "3"
+                               ] 10
+
+                    , Run DiskU [ ("/", "<usedipat><usedp>%"), ("/home", "<usedipat><usedp>%") ]
+                                [ "-L", "83", "-H", "95", "-m", "1", "-p", "3"
+                                , "-l", "grey", "-n", "gold", "-h", "tomato"
+                                , "--"
+                                , "--used-icon-pattern", "<icon=disk/used/used_%%.xpm/>"
+                                ] 20
+
+                    , Run Brightness [ "-t", "<ipat> <percent>%"
+                                     , "-w", "3"
+                                     , "--"
+                                     , "-D", "intel_backlight"
+                                     , "--brightness-icon-pattern", "<icon=brightness/brightness_%%.xpm/>"
+                                     ] 5
+
+                    , Run Volume "default" "Master" [ "-t", "<volumeipat> <volume>% <status>"
+                                                    , "-w", "3"
+                                                    , "--"
+                                                    , "--onc", "limegreen"
+                                                    , "--offc", "tomato"
+                                                    , "--volume-icon-pattern", "<icon=volume/volume_%%.xpm/>"
+                                                    ] 5
+
+                    , Run BatteryP [ "BAT0" ]
+                                   [ "-t", "<leftipat> <acstatus> "
+                                   , "-L", "35", "-H", "71"
+                                   , "-l", "tomato", "-n","gold", "-h", "grey"
+                                   , "--"
+                                   , "-O", "<left>%"
+                                   , "-i", "<left>%"
+                                   , "-o", "<left>% <timeleft>"
+                                   , "--on-icon-pattern", "<icon=battery/on/battery_on_%%.xpm/>"
+                                   , "--off-icon-pattern", "<icon=battery/off/battery_off_%%.xpm/>"
+                                   , "--idle-icon-pattern", "<icon=battery/idle/battery_idle_%%.xpm/>"
+                                   , "-a", "notify-send 'Power Manager' 'The battery level is to low. Suspend after 6 seconds...' -u critical -t 5000; sleep 5; systemctl suspend"
+                                   , "-A", "12"
+                                   ] 50
+
+                    , Run Date "<icon=other/calendar.xpm/><fc=tan> %a %_d-%b-%Y </fc> <icon=other/clock.xpm/><fc=deepskyblue> %H:%M</fc>" "date" 10
+
+                    -- Script that dynamically adjusts xmobar padding depending on number of trayer icons.
+                    , Run Com "/home/meow/.xmobar/padding-icon.sh" [] "trayerpad" 20
+
+                    ]
+
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "<icon=other/debian_24x24.xpm/> %UnsafeStdinReader% }\
+                    \{ <box type=Top width=1 color=darkgrey>%ppp0%</box> <box type=Top width=1 color=darkgrey>%kvnet%</box> <box type=Top width=1 color=darkgrey><action=`xterm -e wavemon`>%dynnetwork%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e 'iotop -aok'`>%diskio%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e htop`>%cpu%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e 'watch sensors'`>%multicoretemp%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e watch free -h`>%memory% %swap%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e watch df -h`>%disku%</action></box> <box type=Top width=1 color=darkgrey>%bright%</box> <box type=Top width=1 color=darkgrey><action=`xterm -e alsamixer`>%default:Master%</action></box> <box type=Top width=1 color=darkgrey>%battery%</box> <box type=Top width=1 color=gold><action=`xterm -e 'cal | less'`>%date%</action></box>%trayerpad%" }
+

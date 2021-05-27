@@ -1,0 +1,181 @@
+#TAG;MARK;NAME;DESCRIPTION;CATEGORY;SECTION;NOTE
+;rice;acpi;displays information on ACPI devices;;utils;Adding /snap/bin to your default $PATH makes running snaps that don’t automatically add themselves more convenient
+;;acpi-support;scripts for handling many ACPI events;;admin;check Emoji coverage surf https://getemoji.com
+;rice;alsamixer;graphical soundcard mixer for ALSA soundcard driver;;sound;configure SUDO_ASKPASS env (man sudo.conf)
+;rice;apt;commandline package manager;package manager;admin;could mount/umount automatically. Run as daemon.
+;rice;aptitude;terminal-based package manager;package manager;admin;for syntax highlighting in less
+node.js;;aspell;GNU Aspell spell-checker;;text;helps fix small fonts
+;rice;atool;tool for managing file archives of various types;;utils;http://www.webmin.com/
+;;bash-completion;programmable completion for the bash shell;;shells;https://github.com/baskerville/bspwm
+;;bc;GNU bc arbitrary precision calculator language;;math;https://github.com/davatorium/rofi
+;;bleachbit;delete unnecessary files from the system;;admin;https://github.com/Genymobile/scrcpy
+;rice;blueman;Graphical bluetooth manager;;x11;https://github.com/kdheepak/taskwarrior-tui
+;;bmon;portable bandwidth monitor and rate estimator;;net;https://github.com/mthenw/frontail
+;;bmon;portable bandwidth monitor and rate estimator;;net;https://github.com/teejee2008/timeshift
+;rice;bspwm;Binary space partitioning window manager;;x11;https://github.com/trizen/youtube-viewer
+;;calcurse;text-based calendar and todo manager;;utils;https://meet.jit.si
+;;calibre;powerful and easy to use e-book manager;;text;https://obsproject.com/
+;;chromium;web browser;web browser;;https://suckless.org/
+;;collectd;statistics collection and monitoring daemon;;utils;https://webhamster.ru/
+;rice;compton;compositor for X11, based on xcompmgr;;x11;https://wingware.com/
+;;compton-conf;Compton Configurator for Qt;;x11;https://www.google.com/search?q=iosevka+font&oq=iosevka&aqs=chrome.0.69i59l3j69i57.1869j0j7&sourceid=chrome&ie=UTF-8
+;;curlftpfs;filesystem to access FTP hosts based on FUSE and cURL;;utils;https://www.virtualbox.org/
+;;davfs2;mount a WebDAV resource as a regular file system;;utils;https://www.youtube.com/watch?v=zl68asL9jZA
+;;deluge;bittorrent client written in Python/PyGTK;;net;necessary package for fzf (check FZF_DEFAULT_COMMAND, FZF_CTRL_T_COMMAND envs)
+;;dialog;dialog --common-options --yesno text height width;;misc;nice!
+;;dmidecode;SMBIOS/DMI table decoder;;utils;nm-applet, network-manager-*
+;;docker;Docker image and container command line interface;;;nmtui
+;;dosfstools;utilities for making and checking MS-DOS FAT filesystems;;otherosfs;notify-send tool
+;;dunst;dmenu-ish notification-daemon;;x11;osd_cat tool
+;;dwm;dynamic window manager;WM window manager;x11;purge vim-* and install neovim*
+proprietary;;exfat-utils;utilities to create, check, label and dump exFAT filesystem;;otherosfs;shades-of-grey-harvest
+;rice;fatrace;report system wide file access events;;utils;slimlock
+;;fbxkb;X11 keyboard indicator and switcher;;x11;taskwarrior required
+;;fd-find;Simple, fast and user-friendly alternative to find;;utils;www.docker.com
+;rice;ffmpeg;Tools for transcoding, streaming and playing of multimedia files;;video;xcalib -d :0 .local/share/color/AUO_B140HAN01.3-26.icm
+;rice;file-roller;archive manager for GNOME;;gnome;XF86AudioMicMute
+;rice;font-manager;font management application for the GNOME desktop;font manager;graphics;
+;rice;fonts-iosevka;;;fonts;
+;;fonts-liberation;Fonts with the same metrics as Times, Arial and Courier;fonts;fonts;
+;;fonts-powerline;prompt and statusline utility (symbols font);;fonts;
+;;frontail;Node.js application for streaming logs to the browser. It's a tail -F with UI.;;;
+;rice;fzf;general-purpose command-line fuzzy finder;;utils;
+;rice;gawk;GNU awk, a pattern scanning and processing language;;interpreters;
+;rice;gddrescue;GNU data recovery tool;;utils;
+;rice;ghostwriter;Distraction-free, themeable Markdown editor;;editors;
+;rice;gimp;GNU Image Manipulation Program;image editor;graphics;
+;;gnome-disk-utility;manage and configure disk drives and media;;admin;
+;;gpa;GNU Privacy Assistant (GPA);;utils;
+;;gparted;GNOME partition editor;;gnome;
+;rice;gpg;GNU Privacy Guard -- minimalist public key operations;;utils;
+proprietary;rice;grep;GNU grep, egrep and fgrep;;utils;
+;;gufw;graphical user interface for ufw;;admin;
+;rice;highlight;Universal source code to formatted text converter;;devel;
+;rice;htop;interactive processes viewer;;utils;
+;rice;iceweasel;Web browser based on Firefox - Transitional package;web browser;;
+;rice;iftop;displays bandwidth usage information on an network interface;;net;
+;;imwheel;program to support non-standard buttons on mice in Linux;;X11;
+;rice;inkscape;vector-based drawing program;;graphics;
+;rice;inxi;full featured system information script;;misc;
+;rice;iotop;simple top-like I/O monitor;;admin;
+;rice;iperf3;Internet Protocol bandwidth measuring tool;;net;
+;;iptraf-ng;Next Generation Interactive Colorful IP LAN Monitor;;net;
+proprietary;;jitsi-meet;WebRTC JavaScript video conferences;;;
+;rice;joypixels-android.ttf;version 5.0, unicode 12.0 for emoji coverage;;fonts;
+;rice;kicad;Electronic schematic and PCB design software ;;electronics;
+;rice;libnotify-bin;sends desktop notifications to a notification daemon (Utilities);;utils;
+proprietary;;libreoffice;office productivity suite (metapackage);office;metapackages;
+;;libreoffice-gtk3;office productivity suite -- GTK+ 3 integration;;gnome;
+;;logrotate;Log rotation utility;;admin;
+;rice;lshw;information about hardware configuration;;utils;
+;openbox;lxappearance;LXDE GTK+ theme switcher;GTK+ tweaker;x11;
+;openbox;lxrandr;LXDE monitor configuration tool;;x11;
+;;maim;takes screenshts of your desktop;;x11;
+;openbox;mc;Midnight Commander - a powerful file manager;file manager;utils;
+;rice;mediainfo;command-line utility for reading information from audio/video files;;utils;
+;;minicom;friendly menu driven serial communication program;;comm;
+;openbox;mktemp;coreutils mktemp transitional package;;oldlibs;
+;;motion;V4L capture program supporting motion detection;;video;
+;;mpd;Music Player Daemon;;sound;
+;;mpv;video player based on MPlayer/mplayer2;video player;video;
+;;mytetra;smart crossplatform manager for information collecting;PIM manager;default;
+;;ncdu;ncurses disk usage viewer;;admin;
+;;ncmpcpp;ncurses-based client for the Music Player Daemon (MPD);;sound;
+;rice;neofetch;Shows Linux System Information with Distribution Logo;;utils;
+;rice;neovim;heavily refactored vim fork;;editors;
+;rice;net-tools;NET-3 networking toolkit;;net;
+;;nethogs;Net top tool grouping bandwidth per process;;net;
+;;network-manager;network management framework (daemon and userspace tools);network manager;net;
+;;network-manager-gnome ;network management framework (GNOME frontend);network manager;gnome;
+;;newsboat;text mode rss feed reader with podcast support;RSS reader;net;
+;;nginx;small, powerful, scalable web/proxy server;;httpd;
+;;nitrogen;wallpaper browser and changing utility for X;wallpaper manager;x11;
+;;nload;realtime console network usage monitor;;net;
+;;notable;The Markdown-based note-taking app that doesn't suck;PIM manager;default;
+;;ntfs-3g;read/write NTFS driver for FUSE;;otherosfs;
+;rice;obconf;preferences manager for Openbox window manager;;x11;
+;;obmenu;sudo apt-get install awn;;x11;
+;;obs-studio;recorder and streamer for live video content;;video;
+proprietary;;openbox;standards-compliant, fast, light-weight and extensible window manager;;x11;
+;rice;papirus-icon-theme;Papirus open source icon theme for Linux;icon theme;x11;
+;;partclone;Utility to clone and restore a partition;;admin;
+;;pcmanfm;extremely fast and lightweight file manager;;utils;
+;;puddletag;simple, powerful audio tag editor;;sound;
+;rice;pulsemixer;command-line mixer for PulseAudio with a curses interface;;sound;
+;rice;putty;Telnet/SSH client for X;;net;
+;;python3;interactive high-level object-oriented language;;python;
+;rice;qemu qemu-kvm virt-manager;virtual machine;;otherosfs;
+;rice;qt5ct;Qt5 Configuration Utility;;utils;
+;;ranger;File manager with an ncurses frontend written in Python;file manager;;
+;;rclone;rsync for commercial cloud storage;;net;
+;;redshift-gtk;Adjusts the color temperature of your screen with GTK+ integration;;x11;
+;rice;remmina;GTK+ Remote Desktop Client;;gnome;
+;rice;rofi;window switcher, run dialog and dmenu replacement;;x11;
+;rice;rsync;fast, versatile, remote (and local) file-copying tool;;net;
+;;scrcpy;provides display and control of Android devices;;;
+;rice;screen;terminal multiplexer with VT100/ANSI terminal emulation;;misc;
+;;screenkey;screencast tool to display your keystrokes;;python;
+;;sdcv;StarDict Console Version;;utils;
+;;sed;GNU stream editor for filtering/transforming text;;utils;
+;rice;shades-of-grey;A flat dark GTK-theme with ergonomic contrasts;theme;;
+;;shc;Generic shell script compiler;;devel;
+;rice;simplescreenrecorder;Feature-rich screen recorder for X11 and OpenGL;;video;
+;;slim;x-display-manager;DM display manager;x11;
+;rice;snapd;Daemon and tooling that enable snap packages ;;devel;
+;rice;socat;multipurpose relay for bidirectional data transfer;;net;
+;;source-highlight;convert source code to syntax highlighted document;;devel;
+;;ssh-askpass;under X, asks user for a passphrase for ssh-add;;net;
+;rice;sshfs;filesystem client based on SSH File Transfer Protocol;;utils;
+;;stardict;International dictionary;;utils;
+;rice;stress;tool to impose load on and stress test a computer system;;devel;
+;;surf;Simple web browser by suckless community;web browser;web;
+proprietary;;sxhkd;Simple X hotkey daemon;;x11;
+;;sxiv;simple X image viewer;image viewer;graphics;
+;rice;synaptic;graphical package manager;package manager;admin;
+;openbox;syncthing;decentralized file synchronization;;devel;
+;rice;syncthing-gtk;GTK3-based GUI and notification area icon for syncthing;;net;
+;;tar;GNU version of the tar archiving utility;;utils;
+;rice;taskd;Synchronisation server for taskwarrior;;utils;
+;rice;tasksh; shell command that wraps Taskwarrior commands;;utils;
+;;taskwarrior;feature-rich console based todo list manager;;utils;
+;rice;taskwarrior-tui;A Terminal User Interface for Taskwarrior;;;
+;;telegram-desktop;official telegram messaging app;messenger;net;
+;;tigervnc-standalone-server;Standalone virtual network computing server;;x11;
+;rice;tigervnc-viewer;Virtual network computing client for X;;x11;
+;;timeshift;system restore utility;;;
+;rice;timidity;Software sound renderer (MIDI sequencer, MOD player);;sound;
+;rice;tint2;lightweight taskbar;;x11;
+;rice;tlp tlp-rdw tlpui;advanced power management tool for Linux;power management;utils;
+;rice;tmux;terminal multiplexer;;admin;
+proprietary;rice;tree;displays an indented directory tree, in color;;utils;
+;rice;ufw;program for managing a Netfilter firewall;;admin;
+;;uget;easy-to-use download manager written in GTK+;;net;
+;rice;unclutter;hides the mouse cursor in X after a period of inactivity;;x11;
+proprietary;rice;unrar;Unarchiver for .rar files (non-free version);;non-free/utils;
+;;unzip;De-archiver for .zip files;;utils;
+;;urlscan;Extract and browse the URLs contained in an email (urlview replacement);;mail;
+proprietary;openbox;vifm;flexible vi-like file manager using ncurses;;utils;
+;;vim;Vi IMproved - enhanced vi editor;;editors;
+;;virtualbox;virtual machine;virtual machine;;
+;;volumeicon-alsa ;systray volume icon for alsa;;sound;
+;;w3m;WWW browsable pager with excellent tables/frames support;;web;
+;;wavemon;Wireless Device Monitoring Application;;net;
+;rice;webmin;web-based interface for system administration for Unix;;;
+;rice;wget;retrieves files from the web;;web;
+;rice;wicd; wired and wireless network manager - metapackage;;net;
+;rice;Wing Pro IDE;full-featured Python IDE designed for professional developers;;;
+;rice;x11vnc;VNC server to allow remote access to an existing X session;;x11;
+;rice;xbacklight;simple utility to set the backlight level;;x11;
+;rice;xcalib;Tiny monitor calibration loader for Xorg;;x11;
+;rice;xcalib;Tiny monitor calibration loader for Xorg;;x11;
+;rice;xclip;command line interface to X selections;;x11;
+;rice;xdotool;simulate (generate) X11 keyboard/mouse input events;;x11;
+;rice;xfce4-terminal;Xfce terminal emulator;;xfce;
+proprietary;;xinput;Runtime configuration and test of XInput devices;;x11;
+;rice;xosd-bin;X On-Screen Display library - binary files;;x11;
+;;xserver-xorg-input-synaptics;Synaptics TouchPad driver for X.Org server;;x11;
+;rice;xterm;X terminal emulator;;x11;
+;rice;youtube-dl;downloader of videos from YouTube and other sites;;web;
+;;youtube-viewer;a lightweight application for searching and streaming videos from YouTube;;;
+;rice;zathura;document viewer with a minimalistic interface;;text;
+;rice;zathura-djvu;DjVu support for zathura;;text;

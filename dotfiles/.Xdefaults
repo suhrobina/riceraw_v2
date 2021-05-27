@@ -1,0 +1,144 @@
+!   __  __   _       __             _ _
+!   \ \/ /__| | ___ / _| __ _ _   _| | |_ ___
+!    \  // _` |/ _ \ |_ / _` | | | | | __/ __|
+!  _ /  \ (_| |  __/  _| (_| | |_| | | |_\__ \
+! (_)_/\_\__,_|\___|_|  \__,_|\__,_|_|\__|___/
+!
+
+! Font settings (for programs that do not support fontconfig)
+! ===========================================================
+
+Xft*antialias: 1
+Xft*rgba: rgb
+Xft*autohint: 0
+Xft*hinting: 1
+Xft*hintstyle: hintslight
+Xft*lcdfilter: lcddefault
+
+! xterm
+! =====
+
+! Basic settings ! -----------------------------------------------------------
+
+xterm*termName: xterm-256color
+xterm*locale: true
+xterm*utf8: 1
+xterm*utf8Fonts: always
+xterm*dynamicColors: true
+
+! UI components ! ------------------------------------------------------------
+
+xterm*toolBar: false
+xterm*scrollBar: false
+xterm*internalBorder: 0
+
+! Cursor | -------------------------------------------------------------------
+
+! Allowing the cursor to use the reverse colour of the background or
+! foreground avoids circumstances, such as in Vim, where the cursor can
+! be virtually impossible to see.  Note that this does not work when the
+! cursor is not a block character (cursorUnderLine: true).
+xterm*cursorColor: reverse
+xterm*cursorBlink: true
+xterm*cursorOffTime: 300
+xterm*cursorOnTime: 800
+xterm*cursorUnderLine: false
+xterm*pointerShape: XTerm
+
+! Bell ! ---------------------------------------------------------------------
+
+xterm*bellIsUrgent: false
+xterm*bellSupressTime: 100
+xterm*marginBell: false
+xterm*visualBell: true
+xterm*visualBellDelay: 100
+xterm*visualBellLine: true
+
+! Colors ! -------------------------------------------------------------------
+
+xterm*background:  #000000
+xterm*foreground:  #d3d7cf
+! Black
+xterm*color0:      #000000
+xterm*color8:      #555753
+! Red
+xterm*color1:      #CC0000
+xterm*color9:      #EF2929
+! Green
+xterm*color2:      #4E9A06
+xterm*color10:     #8AE234
+! Yellow
+xterm*color3:      #C4A000
+xterm*color11:     #FCE94F
+! Blue
+xterm*color4:      #3465A4
+xterm*color12:     #739FCF
+! Magenda
+xterm*color5:      #75507B
+xterm*color13:     #AD7FA8
+! Cyan
+xterm*color6:      #06989A
+xterm*color14:     #34E2E2
+! White
+xterm*color7:      #D3D7CF
+xterm*color15:     #EEEEEC
+
+! Text highlighting ! --------------------------------------------------------
+
+xterm*highlightColor: XtDefaultForeground
+xterm*highlightReverse: true
+xterm*highlightSelection: true
+xterm*highlightTextColor: XtDefaultBackground
+
+! Font settings ! ------------------------------------------------------------
+
+xterm*faceName: Iosevka Fixed
+xterm*faceSize: 15
+xterm*renderFont: true
+xterm*allowBoldFonts: true
+xterm*boldColors: true
+xterm*faceSize1: 11
+xterm*faceSize2: 13
+xterm*faceSize3: 17
+xterm*faceSize4: 19
+xterm*faceSize5: 21
+xterm*faceSize6: 23
+xterm*forceBoxChars: false
+!xterm*limitFontsets: 5
+xterm*scaleHeight: 1.0
+
+! Scroll and output ! --------------------------------------------------------
+
+xterm*jumpScroll: true
+xterm*multiScroll: true
+xterm*saveLines: 9999
+xterm*scrollKey: true
+xterm*scrollTtyKeypress: true
+xterm*scrollTtyOutput: false
+xterm*alternateScroll: true
+
+! Backspace behaviour ! ------------------------------------------------------
+
+xterm*backarrowKey: false
+xterm*metaSendsEscape: true
+xterm*ttyModes: erase ^?
+
+! Key bindings ! -------------------------------------------------------------
+
+xterm*selectToClipboard: true
+xterm*translations: #override \n\
+	Ctrl Shift <KeyPress>-: smaller-vt-font() \n\
+	Ctrl Shift <KeyPress>=: larger-vt-font() \n\
+	Ctrl Shift <KeyPress>Home: set-vt-font(d) \n\
+	Ctrl Shift <KeyPress>C: select-end(SELECT, CLIPBOARD) \n\
+	Ctrl Shift <KeyPress>V: insert-selection(SELECT, CLIPBOARD) \n\
+    Shift <Btn1Up>: exec-formatted("chromium '%t'", PRIMARY)
+
+! xmessage customization ! ----------------------------------------------------
+
+xmessage*form.okay.shapeStyle: rectangle
+xmessage*foreground: gold
+xmessage*background: black
+xmessage*borderColor: gold
+xmessage*font: *-*-*-*-*-*-14-*-*-*-*-*-*
+
