@@ -637,9 +637,9 @@ xterm*color15:     #EEEEEC
 PART 2/2 XMonad Installation Workflow
 -------------------------------------
 links:
-[xmonad: A tiling window manager](https://hackage.haskell.org/package/xmonad)
-[xmonad-contrib: Third party extensions for xmonad](https://hackage.haskell.org/package/xmonad-contrib)
-[xmobar: A Minimalistic Text Based Status Bar](https://hackage.haskell.org/package/xmobar)
+* [xmonad: A tiling window manager](https://hackage.haskell.org/package/xmonad)
+* [xmonad-contrib: Third party extensions for xmonad](https://hackage.haskell.org/package/xmonad-contrib)
+* [xmobar: A Minimalistic Text Based Status Bar](https://hackage.haskell.org/package/xmobar)
 
 ### Cabal, xmonad, xmonad-contrib, xmobar installation
 
