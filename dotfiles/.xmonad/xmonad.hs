@@ -18,10 +18,11 @@
 --  REQUIREMENTS: Packages: pkill xbacklight amixer dmenu paplay trayer
 --                          sound-theme-freedesktop
 --
+--        AUTHOR: Suhrob R. Nuraliev, LongOverdueVitalEnergy@GMail.com
 --     COPYRIGHT: Copyright (c) 2021
 --       LICENSE: GNU General Public License
 --       CREATED: 21 May 2021
---      REVISION: 27 May 2021
+--      REVISION: 30 May 2021
 -- =====================================================================
 
 
@@ -394,7 +395,9 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm, button3), (\w -> focus w >> mouseResizeWindow w
                                        >> windows W.shiftMaster))
 
-    -- you may also bind events to the mouse scroll wheel (button4 and button5)
+    -- bind events to the mouse scroll wheel
+    , ((modm, button4), (\w -> prevWS))
+    , ((modm, button5), (\w -> nextWS))
     ]
 
 ------------------------------------------------------------------------
@@ -679,6 +682,8 @@ help = unlines ["The default modifier key is 'super'. Default keybindings:",
          "[Super]+[button1]        Set the window to floating mode and move by dragging",
          "[Super]+[button2]        Raise the window to the top of the stack",
          "[Super]+[button3]        Set the window to floating mode and resize by dragging",
+         "[Super]+[button4]        Switch to the previous workspace",
+         "[Super]+[button5]        Switch to the next workspace",
          "",
          "For other bindings check ~/.xmonad/xmonad.hs"]
 

@@ -19,10 +19,11 @@
 --  REQUIREMENTS: Packages: alsa-core alsa-mixer htop wavemon  lm-sensors
 --                Icons in `~/.xmobar/icons/` folder
 --
+--        AUTHOR: Suhrob R. Nuraliev, LongOverdueVitalEnergy@GMail.com
 --     COPYRIGHT: Copyright (c) 2021
 --       LICENSE: GNU General Public License
 --       CREATED: 21 May 2021
---      REVISION: 22 May 2021
+--      REVISION: 30 May 2021
 -- =============================================================================
 
 -- Icon pattern filename ralation to values (min=0, max=100):
