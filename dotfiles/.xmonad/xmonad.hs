@@ -398,6 +398,11 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     -- bind events to the mouse scroll wheel
     , ((modm, button4), (\w -> prevWS))
     , ((modm, button5), (\w -> nextWS))
+
+
+    -- bind audio volume
+    , ((modm .|. shiftMask, button4), (\w -> spawn "amixer sset Master 5%+; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"))
+    , ((modm .|. shiftMask, button5), (\w -> spawn "amixer sset Master 5%-; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"))
     ]
 
 ------------------------------------------------------------------------
