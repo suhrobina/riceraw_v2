@@ -400,7 +400,10 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm, button5), (\w -> nextWS))
 
 
-    -- bind audio volume
+    -- bind alternative brightness/audio
+    , ((modm .|. shiftMask .|. controlMask, button4), (\w -> spawn "xbacklight -inc 1"))
+    , ((modm .|. shiftMask .|. controlMask, button5), (\w -> spawn "xbacklight -dec 1"))
+
     , ((modm .|. shiftMask, button4), (\w -> spawn "amixer sset Master 5%+; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"))
     , ((modm .|. shiftMask, button5), (\w -> spawn "amixer sset Master 5%-; paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga"))
     ]

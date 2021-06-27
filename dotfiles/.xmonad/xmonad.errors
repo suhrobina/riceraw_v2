@@ -1,7 +1,7 @@
 
-xmonad.hs:580:1: warning: [-Wtabs]
+xmonad.hs:583:1: warning: [-Wtabs]
     Tab character found here, and in four further locations.
     Please use spaces instead.
     |
-580 |         -- Launching three instances of xmobar on their monitors.
+583 |         -- Launching three instances of xmobar on their monitors.
     | ^^^^^^^^
