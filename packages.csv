@@ -110,6 +110,7 @@ proprietary;;openbox;standards-compliant, fast, light-weight and extensible wind
 ;;rclone;rsync for commercial cloud storage;;net;
 ;;redshift-gtk;Adjusts the color temperature of your screen with GTK+ integration;;x11;
 ;rice;remmina;GTK+ Remote Desktop Client;;gnome;
+proprietary;;rlinux;R-Linux is a file recover utility for the Ext2/3/4FS file system used in the Linux OS and several Unixes.;;system;
 ;rice;rofi;window switcher, run dialog and dmenu replacement;;x11;
 ;rice;rsync;fast, versatile, remote (and local) file-copying tool;;net;
 ;;scrcpy;provides display and control of Android devices;;;

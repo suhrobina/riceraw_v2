@@ -31,7 +31,7 @@ POINTER_ID="$(xinput list | grep "$POINTER_NAME" | sed 's/^.*id=//g;s/\[.*//g')"
 
 # Turn OFF
 POINTER_PROP_NAME="Synaptics Off" # default is 0
-xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" 0
+xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" 1
 
 # -- Lenovo T440p TrackPoint --------------------------------------------------
 
@@ -72,5 +72,5 @@ xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" 0, 1
 
 # Set the pointer speed
 POINTER_PROP_NAME="libinput Accel Speed" # default is 0.000000
-xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" "0.5"
+xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" "0.4"
 
