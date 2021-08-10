@@ -143,7 +143,7 @@ windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 -- My Workspaces
-myWorkspaces    = ["DEV","WWW","SYS","EXT", "CHAT"]
+myWorkspaces    = ["SYS","WWW","DEV","EXT", "CHAT"]
 --myWorkspaces    = ["1:GEN","2:WWW","3:SYS","4:DEV","5:VBOX","6:CHAT","7:MUS","8:DOC","9:GFX"]
 
 -- Clickable workspaces
@@ -568,7 +568,8 @@ myStartupHook = do
     spawnOnce "redshift-gtk &"                   -- Color temperature adjustment tool
     spawnOnce "syncthing-gtk -m &"               -- GUI for Syncthing
     spawnOnce "telegram &"                       -- Favorite messenger
-    spawnOnce "uget-gtk"                         -- Download Manager
+    spawnOnce "uget-gtk &"                       -- Download Manager
+    spawnOnce "joplin &"                         -- Note Taking Software
     spawnOnce "pkill trayer; trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x282c34  --height 25 &"   -- Systray
     spawnOnce "sleep 4;notify-send 'Welcome to RiceRAW on Linux with XMonad!' 'Press SUPER+F1 to the help.'"  -- Welcome Notification
     spawnOnce "paplay /usr/share/sounds/freedesktop/stereo/service-login.oga" -- Login sound
