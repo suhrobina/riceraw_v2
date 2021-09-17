@@ -143,7 +143,8 @@ windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 -- My Workspaces
-myWorkspaces    = ["SYS","WWW","DEV","EXT", "CHAT"]
+myWorkspaces    = ["SYS","DEV","WWW","CHAT"]
+--myWorkspaces    = ["SYS","WWW","DEV","EXT","CHAT"]
 --myWorkspaces    = ["1:GEN","2:WWW","3:SYS","4:DEV","5:VBOX","6:CHAT","7:MUS","8:DOC","9:GFX"]
 
 -- Clickable workspaces
@@ -505,8 +506,8 @@ myManageHook = composeAll
     , className =? "Gimp"              --> doFloat
     , resource  =? "desktop_window"    --> doIgnore
     , resource  =? "kdesktop"          --> doIgnore
-    , title     =? "Mozilla Firefox"   --> doShift ( myWorkspaces !! 1 )
-    , className =? "TelegramDesktop"   --> doShift ( myWorkspaces !! 4 )
+    , title     =? "Mozilla Firefox"   --> doShift ( myWorkspaces !! 2 )
+    , className =? "TelegramDesktop"   --> doShift ( myWorkspaces !! 3 )
     ]
 
 
