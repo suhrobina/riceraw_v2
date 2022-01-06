@@ -503,7 +503,7 @@ myManageHook = composeAll
     , className =? "dialog"            --> doFloat
     , className =? "download"          --> doFloat
     , className =? "error"             --> doFloat
-    , className =? "Gimp"              --> doFloat
+--    , className =? "Gimp"              --> doFloat
     , resource  =? "desktop_window"    --> doIgnore
     , resource  =? "kdesktop"          --> doIgnore
     , title     =? "Mozilla Firefox"   --> doShift ( myWorkspaces !! 2 )
@@ -571,6 +571,7 @@ myStartupHook = do
     spawnOnce "telegram &"                       -- Favorite messenger
     spawnOnce "uget-gtk &"                       -- Download Manager
     spawnOnce "joplin &"                         -- Note Taking Software
+    spawnOnce "keepassxc &"                      -- Password Manager
     spawnOnce "pkill trayer; trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x282c34  --height 25 &"   -- Systray
     spawnOnce "sleep 4;notify-send 'Welcome to RiceRAW on Linux with XMonad!' 'Press SUPER+F1 to the help.'"  -- Welcome Notification
     spawnOnce "paplay /usr/share/sounds/freedesktop/stereo/service-login.oga" -- Login sound
