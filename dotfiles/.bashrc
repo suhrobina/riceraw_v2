@@ -247,6 +247,8 @@ alias pb='p-builder.sh'
 alias pf='cd ${HOME}/Documents/Projects/'
 alias kon='sudo service kerio-kvc start'
 alias koff='sudo service kerio-kvc stop'
+alias won='sudo wg-quick up wg0'
+alias woff='sudo wg-quick down wg0'
 
 # == OTHER ====================================================================
 

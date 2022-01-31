@@ -58,6 +58,8 @@ Config { font = "xft:Iosevka:weight=regular:pixelsize=16:antialias=true:hinting=
 
                     -- , Run Com "uname" ["-s","-r"] "" 36000
 
+                    , Run Network "wg0" [ "-t", "<fc=limegreen><up>WG</fc>" ] 10
+
                     , Run Network "ppp0" [ "-t", "<fc=limegreen><up>VPN</fc>" ] 10
 
                     , Run Network "kvnet" [ "-t", "<fc=limegreen><up>KVC</fc>" ] 10
@@ -157,5 +159,5 @@ Config { font = "xft:Iosevka:weight=regular:pixelsize=16:antialias=true:hinting=
        , sepChar = "%"
        , alignSep = "}{"
        , template = "<icon=other/debian_24x24.xpm/> %UnsafeStdinReader% }\
-                    \{ <box type=Top width=1 color=darkgrey>%ppp0%</box> <box type=Top width=1 color=darkgrey>%kvnet%</box> <box type=Top width=1 color=darkgrey><action=`xterm -e wavemon`>%dynnetwork%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e 'iotop -aok'`>%diskio%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e htop`>%cpu%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e 'watch sensors'`>%multicoretemp%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e watch free -h`>%memory% %swap%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e watch df -h`>%disku%</action></box> <box type=Top width=1 color=darkgrey>%bright%</box> <box type=Top width=1 color=darkgrey><action=`xterm -e alsamixer`>%default:Master%</action></box> <box type=Top width=1 color=darkgrey>%battery%</box> <box type=Top width=1 color=gold><action=`xterm -e 'cal | less'`>%date%</action></box>%trayerpad%" }
+                    \{ <box type=Top width=1 color=darkgrey>%wg0%</box> <box type=Top width=1 color=darkgrey>%ppp0%</box> <box type=Top width=1 color=darkgrey>%kvnet%</box> <box type=Top width=1 color=darkgrey><action=`xterm -e wavemon`>%dynnetwork%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e 'iotop -aok'`>%diskio%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e htop`>%cpu%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e 'watch sensors'`>%multicoretemp%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e watch free -h`>%memory% %swap%</action></box> <box type=Top width=1 color=darkgrey><action=`xterm -e watch df -h`>%disku%</action></box> <box type=Top width=1 color=darkgrey>%bright%</box> <box type=Top width=1 color=darkgrey><action=`xterm -e alsamixer`>%default:Master%</action></box> <box type=Top width=1 color=darkgrey>%battery%</box> <box type=Top width=1 color=gold><action=`xterm -e 'cal | less'`>%date%</action></box>%trayerpad%" }
 

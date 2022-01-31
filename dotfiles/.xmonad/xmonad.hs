@@ -22,7 +22,7 @@
 --     COPYRIGHT: Copyright (c) 2021
 --       LICENSE: GNU General Public License
 --       CREATED: 21 May 2021
---      REVISION: 30 May 2021
+--      REVISION: 31 Jan 2022
 -- =====================================================================
 
 
@@ -504,6 +504,7 @@ myManageHook = composeAll
     , className =? "download"          --> doFloat
     , className =? "error"             --> doFloat
 --    , className =? "Gimp"              --> doFloat
+    , className =? "KeePassXC"         --> doFloat
     , resource  =? "desktop_window"    --> doIgnore
     , resource  =? "kdesktop"          --> doIgnore
     , title     =? "Mozilla Firefox"   --> doShift ( myWorkspaces !! 2 )
@@ -570,7 +571,7 @@ myStartupHook = do
     spawnOnce "syncthing-gtk -m &"               -- GUI for Syncthing
     spawnOnce "telegram &"                       -- Favorite messenger
     spawnOnce "uget-gtk &"                       -- Download Manager
-    spawnOnce "joplin &"                         -- Note Taking Software
+    spawnOnce "QOwnNotes &"                      -- Note Taking Software
     spawnOnce "keepassxc &"                      -- Password Manager
     spawnOnce "pkill trayer; trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x282c34  --height 25 &"   -- Systray
     spawnOnce "sleep 4;notify-send 'Welcome to RiceRAW on Linux with XMonad!' 'Press SUPER+F1 to the help.'"  -- Welcome Notification
