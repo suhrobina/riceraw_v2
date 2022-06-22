@@ -274,3 +274,4 @@ fi
 #if _checkexec neofetch; then
 #    neofetch
 #fi
+

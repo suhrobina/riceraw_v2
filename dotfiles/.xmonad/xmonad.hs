@@ -104,7 +104,7 @@ myBrowser = "iceweasel"
 
 -- default file manager
 myFileManager :: String
-myFileManager = "vifm"
+myFileManager = "nnn"
 
 -- default music player daemon client
 myMPDClient :: String
@@ -113,6 +113,10 @@ myMPDClient = "ncmpcpp"
 -- default calculator
 myCalculator :: String
 myCalculator = "bc -l"
+
+-- default note taking app
+myNotes :: String
+myNotes = "QOwnNotes"
 
 -- Whether focus follows the mouse pointer
 myFocusFollowsMouse :: Bool
@@ -143,7 +147,7 @@ windowCount :: X (Maybe String)
 windowCount = gets $ Just . show . length . W.integrate' . W.stack . W.workspace . W.current . windowset
 
 -- My Workspaces
-myWorkspaces    = ["SYS","DEV","WWW","CHAT"]
+myWorkspaces    = ["SYS","DEV","WWW","CHAT","TON"]
 --myWorkspaces    = ["SYS","WWW","DEV","EXT","CHAT"]
 --myWorkspaces    = ["1:GEN","2:WWW","3:SYS","4:DEV","5:VBOX","6:CHAT","7:MUS","8:DOC","9:GFX"]
 
@@ -247,6 +251,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm, xK_e ), spawn (myTerminal ++ " -e " ++ myFileManager))        -- Launch a file manager
     , ((modm, xK_a ), spawn (myTerminal ++ " -e " ++ myMPDClient))          -- Launch a mpd client
     , ((modm, xK_c ), spawn (myTerminal ++ " -e " ++ myCalculator))         -- Launch a calculator
+    , ((modm, xK_n ), spawn (myNotes))                                      -- Launch a note taking app
+    , ((modm, xK_b ), spawn "chromium --start-fullscreen https://suhrob.xyz")                      -- Launch a Wekan Board
     , ((modm .|. shiftMask, xK_BackSpace),
               spawn (myTerminal ++ " -e tmux new-session -A -s 'Default'")) -- Launch terminal multiplexer
 
@@ -303,7 +309,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- layout operations
     , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf) -- Reset the layouts on the current workspace to default
-    , ((modm,               xK_n     ), sendMessage NextLayout)             -- Rotate through the available layout algorithms
+    --, ((modm,               xK_n     ), sendMessage NextLayout)             -- Rotate through the available layout algorithms
     , ((modm,               xK_g     ), sendMessage $ JumpToLayout "til")   -- Jump directly to the 'til' layout
     , ((modm,               xK_r     ), sendMessage $ JumpToLayout "mti")   -- Jump directly to the 'mti' layout
     , ((modm,               xK_f     ), sendMessage $ JumpToLayout "tab")   -- Jump directly to the 'tab' layout
@@ -509,6 +515,7 @@ myManageHook = composeAll
     , resource  =? "kdesktop"          --> doIgnore
     , title     =? "Mozilla Firefox"   --> doShift ( myWorkspaces !! 2 )
     , className =? "TelegramDesktop"   --> doShift ( myWorkspaces !! 3 )
+    , className =? "Chromium"          --> doShift ( myWorkspaces !! 4 )
     ]
 
 
@@ -573,6 +580,7 @@ myStartupHook = do
     spawnOnce "uget-gtk &"                       -- Download Manager
     spawnOnce "QOwnNotes &"                      -- Note Taking Software
     spawnOnce "keepassxc &"                      -- Password Manager
+    spawnOnce "psi-plus &"                       -- XMPP Messanger
     spawnOnce "pkill trayer; trayer --edge top --align right --widthtype request --padding 6 --SetDockType true --SetPartialStrut true --expand true --monitor 0 --transparent true --alpha 0 --tint 0x282c34  --height 25 &"   -- Systray
     spawnOnce "sleep 4;notify-send 'Welcome to RiceRAW on Linux with XMonad!' 'Press SUPER+F1 to the help.'"  -- Welcome Notification
     spawnOnce "paplay /usr/share/sounds/freedesktop/stereo/service-login.oga" -- Login sound

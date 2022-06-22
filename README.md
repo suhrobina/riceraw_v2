@@ -27,13 +27,13 @@ Alexander Bordachyov <bam85g@gmail.com>
 - **Main Font**        :  iosevka
 - **Compositor**       :  compton
 - **Terminal**         :  xterm
-- **Shell**            :  bash
+- **Shell**            :  zsh
 - **Editor**           :  neovim
-- **File Manager**     :  vifm
+- **File Manager**     :  nnn
 - **Image Viewer**     :  sxiv
 - **Others**           :  fzf, dunst, nitrogen, newsboat, ncmpcpp, zathura ...
 
-Full list of favorite Linux packages: [packages.csv](packages.csv)
+Full list of favorite Linux packages: [packages.ods](packages.ods)
 
 You can get all dotfiles [here](dotfiles/)
 
@@ -633,6 +633,20 @@ xterm*color15:     #EEEEEC
 ```
 
 ![Image](img/tango_colorscheme.png)
+
+### ZSH as default shell
+
+Install `zsh`
+
+```bash
+$ sudo apt install zsh-syntax-hihghlighting
+```
+
+Change login shell
+
+```bash
+$ chsh -s /bin/zsh
+```
 
 PART 2/2 XMonad Installation Workflow
 -------------------------------------

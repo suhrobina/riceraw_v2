@@ -38,6 +38,8 @@ SRC_TARGET_FILEPATHS="
 	.config/vifm/vifmrc
 	.config/compton.conf
 	.config/user-dirs.dirs
+	.config/zsh/plugins
+	.config/zsh/.zshrc
 	.fonts/Hack-Regular.ttf
 	.fonts/iosevka-fixed-regular.ttf
 	.fonts/iosevka-regular.ttf
@@ -58,11 +60,11 @@ SRC_TARGET_FILEPATHS="
 	.inputrc
 	.tmux.conf
 	.xinitrc
+	.zshenv
 "
 
 # Git project folder. Note don't forget about trailing slash (add /).
 DST_GIT_FOLDER="$HOME/Documents/Projects/riceraw_v2/dotfiles"
-
 
 # == PERFORM ==================================================================
 
