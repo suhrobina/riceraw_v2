@@ -182,10 +182,13 @@ export PAGER="less -s -M +Gg"
 # Default man pager
 export MANPAGER="$PAGER"
 
-# fzf search include hidden files and ignore .git (Required fdfind package)
+# fzf search include hidden files, preview and ignore .git (Required fdfind package)
 if _checkexec fdfind; then
     export FZF_DEFAULT_COMMAND='fdfind --hidden --follow --exclude ".git" .'
+    export FZF_CTRL_T_OPTS='--multi'
     export FZF_CTRL_T_COMMAND='fdfind --hidden --follow --exclude ".git" .'
+    export FZF_ALT_C_OPTS='--preview="ls --group-directories-first {+}"'
+    export FZF_ALT_C_COMMAND='fdfind --type d --hidden --follow --exclude ".git"'
 fi
 
 # Specify the path to the askpass helper program.
@@ -307,7 +310,7 @@ alias woff='sudo wg-quick down wg0'
 [ -f ~/.config/zsh/plugins/nnn/misc/quitcd/quitcd.bash_zsh ] &&
     source ~/.config/zsh/plugins/nnn/misc/quitcd/quitcd.bash_zsh
 
-bindkey -s '^o' '^unnn\n'  # Bind nnn on C-o
+bindkey -s '^o' '^un\n'  # Bind nnn on C-o
 
 # A command-line fuzzy finder
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] &&
