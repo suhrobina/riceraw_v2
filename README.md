@@ -645,7 +645,7 @@ $ sudo apt install zsh-syntax-hihghlighting
 Change login shell
 
 ```bash
-$ chsh -s /bin/zsh
+$ chsh -s $(which zsh)
 ```
 
 PART 2/2 XMonad Installation Workflow

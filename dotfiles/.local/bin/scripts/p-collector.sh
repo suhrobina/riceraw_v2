@@ -39,11 +39,11 @@ SRC_TARGET_FILEPATHS="
 	.config/compton.conf
 	.config/user-dirs.dirs
 	.config/zsh/plugins
+	.config/zsh/.p10k.zsh
 	.config/zsh/.zshrc
 	.fonts/Hack-Regular.ttf
 	.fonts/iosevka-fixed-regular.ttf
 	.fonts/iosevka-regular.ttf
-	.fonts/iosevka-term-regular.ttf
 	.fonts/joypixels-android.ttf
 	.local/bin/scripts
 	.local/share/color

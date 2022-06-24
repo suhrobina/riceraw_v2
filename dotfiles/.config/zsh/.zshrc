@@ -11,7 +11,6 @@
 setopt AUTO_CD    # Allows you to cd into directory merely by typing the directory name
 setopt AUTO_MENU  # Automatically  use  menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly.
 
-
 # Set up the prompt
 
 # autoload -Uz promptinit && promptinit
@@ -51,7 +50,6 @@ setopt HIST_SAVE_NO_DUPS       # Don't write duplicate entries in the history fi
 setopt HIST_REDUCE_BLANKS      # Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY             # Don't execute immediately upon history expansion.
 setopt HIST_BEEP               # Beep when accessing nonexistent history.
-
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -152,7 +150,8 @@ function extract {
 
 # == VARIABLE =================================================================
 
-export TERMINAL="xterm"           # Default terminal
+# Default terminal
+export TERMINAL="xterm"
 
 # Default editor
 if _checkexec gvim; then
@@ -182,15 +181,6 @@ export PAGER="less -s -M +Gg"
 # Default man pager
 export MANPAGER="$PAGER"
 
-# fzf search include hidden files, preview and ignore .git (Required fdfind package)
-if _checkexec fdfind; then
-    export FZF_DEFAULT_COMMAND='fdfind --hidden --follow --exclude ".git" .'
-    export FZF_CTRL_T_OPTS='--multi'
-    export FZF_CTRL_T_COMMAND='fdfind --hidden --follow --exclude ".git" .'
-    export FZF_ALT_C_OPTS='--preview="ls --group-directories-first {+}"'
-    export FZF_ALT_C_COMMAND='fdfind --type d --hidden --follow --exclude ".git"'
-fi
-
 # Specify the path to the askpass helper program.
 # Check SUDO(8) for more information
 export SUDO_ASKPASS="/usr/bin/ssh-askpass"
@@ -219,6 +209,12 @@ if [ -d "$HOME/.local/bin/scripts" ]; then
     # export PATH=$PATH:"$HOME"/.local/bin/scripts
     export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 fi
+
+# NNN file manager
+
+export NNN_OPTS="d"
+export NNN_OPENER="nano"
+export NNN_BMS="~:$HOME;d:~/Documents;p:~/Documents/Projects"
 
 # Adding /snap/bin to default $PATH makes running snaps
 export PATH=$PATH:"/snap/bin"
@@ -269,6 +265,8 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -Iv'
 
+alias cpr='rsync --progress -auv'
+
 # Quick navigation
 alias DE='~/Desktop'
 alias DC='~/Documents'
@@ -286,8 +284,7 @@ if _checkexec vim; then
     alias v='vim'
     alias vi='vim'
 fi
-
-alias o='xdg-open'
+alias o='xdg-open '
 alias weather='clear && curl wttr.in'
 alias myip='curl http://ipecho.net/plain; echo'
 alias apt='sudo apt'
@@ -300,21 +297,48 @@ alias won='sudo wg-quick up wg0'
 alias woff='sudo wg-quick down wg0'
 
 
+# == FZF ======================================================================
+
+# A command-line fuzzy finder
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] &&
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+# fzf search include hidden files, preview and ignore .git (Required fdfind package)
+if _checkexec fdfind; then
+    export FZF_DEFAULT_COMMAND='fdfind --hidden --exclude ".git" .'
+
+    export FZF_CTRL_T_OPTS='--multi'
+    export FZF_CTRL_T_COMMAND='fdfind --hidden --exclude ".git" .'
+
+    export FZF_ALT_C_OPTS='--preview="ls --group-directories-first {+}"'
+    export FZF_ALT_C_COMMAND='fdfind --type d --hidden --exclude ".git" .'
+fi
+
 # == PLUGINS ==================================================================
 
+# -- Powerlevel10k ------------------------------------------------------------
+
 # Load powerlevel10k
-#[ -f ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme ] &&
-#    source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+[ -f ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme ] &&
+    source ~/.config/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+# -----------------------------------------------------------------------------
 
 # Load nnn confguration script 'cd on quit'
 [ -f ~/.config/zsh/plugins/nnn/misc/quitcd/quitcd.bash_zsh ] &&
     source ~/.config/zsh/plugins/nnn/misc/quitcd/quitcd.bash_zsh
 
 bindkey -s '^o' '^un\n'  # Bind nnn on C-o
-
-# A command-line fuzzy finder
-[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] &&
-    source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # Load zsh autosuggestions
 [ -f ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] &&
