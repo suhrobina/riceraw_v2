@@ -10,7 +10,7 @@
 
 setopt AUTO_CD    # Allows you to cd into directory merely by typing the directory name
 setopt AUTO_MENU  # Automatically  use  menu completion after the second consecutive request for completion, for example by pressing the tab key repeatedly.
-
+setopt POSIX_CD
 # Set up the prompt
 
 # autoload -Uz promptinit && promptinit
@@ -18,7 +18,6 @@ setopt AUTO_MENU  # Automatically  use  menu completion after the second consecu
 
 # Enable colors and change prompt
 autoload -U colors && colors
-
 
 # PS1 is your normal "waiting for a command" prompt
 
@@ -57,6 +56,7 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Colorful Completion List
 
 # Use vi keybindings
 bindkey -v
@@ -124,6 +124,16 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+
+# Yank to the system clipboard from vi-mode
+function vi-yank-xclip {
+    zle vi-yank
+   echo "$CUTBUFFER" | xclip -i
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
 
 # Extract files
 function extract {
