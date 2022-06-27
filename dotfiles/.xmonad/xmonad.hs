@@ -104,7 +104,7 @@ myBrowser = "iceweasel"
 
 -- default file manager
 myFileManager :: String
-myFileManager = "nnn"
+myFileManager = "start_nnn.sh"
 
 -- default music player daemon client
 myMPDClient :: String

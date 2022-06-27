@@ -31,6 +31,7 @@ SRC_TARGET_FILEPATHS="
 	.config/neofetch
 	.config/newsboat/config
 	.config/nitrogen
+	.config/nnn/bookmarks
 	.config/nvim/spell
 	.config/nvim/init.vim
 	.config/vifm/colors

@@ -170,7 +170,7 @@ export BROWSER="iceweasel"
 export READER="zathura"
 
 # Default file manager
-export FILE="vifm"
+export FILE="nnn"
 
 # Man pages locale priority
 export MANOPT="-L ru"
@@ -212,9 +212,12 @@ fi
 
 # NNN file manager
 
-export NNN_OPTS="d"
-export NNN_OPENER="nano"
-export NNN_BMS="~:$HOME;d:~/Documents;p:~/Documents/Projects"
+export NNN_OPTS="diUR"
+export NNN_ORDER="v:/home/suhrob"
+export NNN_COLORS="3261"
+export NNN_LOCKER="cmatrix"
+export NNN_BMS="~:$HOME;d:~/Documents;p:~/Documents/Projects;t:~/Templates;T:/tmp"
+export NNN_PLUG="c:chksum;i:imgview"
 
 # Adding /snap/bin to default $PATH makes running snaps
 export PATH=$PATH:"/snap/bin"
@@ -232,8 +235,15 @@ export QT_SCALE_FACTOR=1.00
 # support of ls and also add handy aliases
 alias ls='ls -pv --color=auto --group-directories-first'
 alias lsa='ls -pvA --color=auto --group-directories-first'
-alias lsl='ls -lhpv --color=auto --group-directories-first'
-alias lsla='ls -lhpvA --color=auto --group-directories-first'
+
+if _checkexec exa; then
+    alias lsl='exa -lFghH --color=always --group-directories-first --git'
+    alias lsla='exa -lFaghH --color=always --group-directories-first --git'
+else
+    alias lsl='ls -lhpv --color=auto --group-directories-first'
+    alias lsla='ls -lhpvA --color=auto --group-directories-first'
+fi
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -265,6 +275,7 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -Iv'
 
+# Copy with progress
 alias cpr='rsync --progress -auv'
 
 # Quick navigation
@@ -287,7 +298,7 @@ fi
 alias o='xdg-open '
 alias weather='clear && curl wttr.in'
 alias myip='curl http://ipecho.net/plain; echo'
-alias apt='sudo apt'
+alias reload='source ~/.config/zsh/.zshrc && echo "Done"'
 alias figlet='figlet -d ${HOME}/.local/share/figlet'
 alias pb='p-builder.sh'
 alias pf='cd ${HOME}/Documents/Projects/'
