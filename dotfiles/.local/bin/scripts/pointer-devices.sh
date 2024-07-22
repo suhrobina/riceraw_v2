@@ -58,7 +58,7 @@ xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" 0, 1
 
 # Set the pointer speed
 POINTER_PROP_NAME="libinput Accel Speed" # default is 0.000000
-xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" "0.55"
+xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" "1.00"
 
 # -- Kensington Slimblade Trackball -------------------------------------------
 
@@ -72,5 +72,5 @@ xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" 0, 1
 
 # Set the pointer speed
 POINTER_PROP_NAME="libinput Accel Speed" # default is 0.000000
-xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" "0.4"
+xinput set-prop ${POINTER_ID} "${POINTER_PROP_NAME}" "0.8"
 

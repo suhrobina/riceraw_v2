@@ -26,7 +26,7 @@ SRC_ROOT_FOLDER="${HOME}"
 SRC_TARGET_FILEPATHS="
 	.config/dunst/dunstrc
 	.config/fontconfig
-	.config/gtk-3.0
+	.config/gtk-3.0/settings.ini
 	.config/mpd/mpd.conf
 	.config/neofetch
 	.config/newsboat/config
@@ -34,9 +34,6 @@ SRC_TARGET_FILEPATHS="
 	.config/nnn/bookmarks
 	.config/nvim/spell
 	.config/nvim/init.vim
-	.config/vifm/colors
-	.config/vifm/scripts
-	.config/vifm/vifmrc
 	.config/compton.conf
 	.config/user-dirs.dirs
 	.config/zsh/plugins

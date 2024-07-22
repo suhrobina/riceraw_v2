@@ -304,6 +304,7 @@ alias RD='/mnt/ramdisk'
 if _checkexec vim; then
     alias v='vim'
     alias vi='vim'
+    alias e='vim'
 fi
 alias o='xdg-open '
 alias weather='clear && curl wttr.in'
@@ -314,8 +315,8 @@ alias pb='p-builder.sh'
 alias pf='cd ${HOME}/Documents/Projects/'
 alias kon='sudo service kerio-kvc start'
 alias koff='sudo service kerio-kvc stop'
-alias won='sudo wg-quick up wg0'
-alias woff='sudo wg-quick down wg0'
+alias won='sudo wg-quick up wg2'
+alias woff='sudo wg-quick down wg2'
 
 
 # == FZF ======================================================================

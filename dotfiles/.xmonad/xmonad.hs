@@ -100,7 +100,7 @@ myTerminal = "xterm"
 
 -- default internet browser
 myBrowser :: String
-myBrowser = "iceweasel"
+myBrowser = "firefox"
 
 -- default file manager
 myFileManager :: String
@@ -252,7 +252,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm, xK_a ), spawn (myTerminal ++ " -e " ++ myMPDClient))          -- Launch a mpd client
     , ((modm, xK_c ), spawn (myTerminal ++ " -e " ++ myCalculator))         -- Launch a calculator
     , ((modm, xK_n ), spawn (myNotes))                                      -- Launch a note taking app
-    , ((modm, xK_b ), spawn "chromium --start-fullscreen https://suhrob.xyz")                      -- Launch a Wekan Board
+    , ((modm, xK_b ), spawn "chromium --start-fullscreen https://suhrob.org")                      -- Launch a Wekan Board
     , ((modm .|. shiftMask, xK_BackSpace),
               spawn (myTerminal ++ " -e tmux new-session -A -s 'Default'")) -- Launch terminal multiplexer
 
@@ -510,7 +510,6 @@ myManageHook = composeAll
     , className =? "download"          --> doFloat
     , className =? "error"             --> doFloat
 --    , className =? "Gimp"              --> doFloat
-    , className =? "KeePassXC"         --> doFloat
     , resource  =? "desktop_window"    --> doIgnore
     , resource  =? "kdesktop"          --> doIgnore
     , title     =? "Mozilla Firefox"   --> doShift ( myWorkspaces !! 2 )

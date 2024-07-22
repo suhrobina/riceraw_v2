@@ -29,16 +29,16 @@ rsync -havz --delete /home/suhrob/.task suhrob@192.168.100.6:/home/suhrob/sync
 rsync -havz --delete /home/suhrob/.taskrc suhrob@192.168.100.6:/home/suhrob/sync
 echo
 
-# -- Joplin -------------------------------------------------------------------
+# -- QOwnNotes ----------------------------------------------------------------
 
 echo -e "${BOLD_GREEN}LOCAL(Notes) > > > > > > FILE_SERVER${RESET}"
 rsync -havz --delete /home/suhrob/Notes suhrob@192.168.100.6:/home/suhrob/sync
 echo
 
-# -- Projects Archives --------------------------------------------------------
+# -- Projects -----------------------------------------------------------------
 
-echo -e "${BOLD_GREEN}LOCAL(Projects Archives) > > > > > > FILE_SERVER${RESET}"
-rsync -havz --delete /home/suhrob/Documents/Projects/archives suhrob@192.168.100.6:/home/suhrob/sync
+echo -e "${BOLD_GREEN}LOCAL(Projects) > > > > > > FILE_SERVER${RESET}"
+rsync -havz --delete /home/suhrob/Documents/Projects suhrob@192.168.100.6:/home/suhrob/sync
 echo
 
 echo
